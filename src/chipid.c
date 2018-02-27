@@ -11,7 +11,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,           // No flash pages
             .sram_size = 0x80000,              // "SRAM" byte size in hex from
             .bootrom_base = 0x00200000,        //! "System memory" starting address from 
-            .bootrom_size = 0xEDC0             //! @todo "System memory" byte size in hex from 
+            .bootrom_size = 0xEDC0,            //! @todo "System memory" byte size in hex from
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //RM0385 and DS10916 document was used to find these paramaters
@@ -22,7 +25,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,           // No flash pages
             .sram_size = 0x50000,              // "SRAM" byte size in hex from DS Fig 18
             .bootrom_base = 0x00100000,        // "System memory" starting address from DS Fig 18
-            .bootrom_size = 0xEDC0             // "System memory" byte size in hex from DS Fig 18
+            .bootrom_size = 0xEDC0,            // "System memory" byte size in hex from DS Fig 18
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //RM0431 and DS document was used to find these paramaters
@@ -33,7 +39,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,           // No flash pages
             .sram_size = 0x40000,              // "SRAM" byte size in hex from DS Fig 24
             .bootrom_base = 0x00100000,        // "System memory" starting address from DS Fig 24
-            .bootrom_size = 0xEDC0             // "System memory" byte size in hex from DS Fig 24
+            .bootrom_size = 0xEDC0,            // "System memory" byte size in hex from DS Fig 24
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         { // table 2, PM0063
             .chip_id = STLINK_CHIPID_STM32_F1_MEDIUM,
@@ -43,7 +52,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,
             .sram_size = 0x5000,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {  // table 1, PM0059
             .chip_id = STLINK_CHIPID_STM32_F2,
@@ -53,7 +65,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x20000,
             .sram_size = 0x20000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         { // PM0063
             .chip_id = STLINK_CHIPID_STM32_F1_LOW,
@@ -63,7 +78,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,
             .sram_size = 0x2800,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F4,
@@ -73,7 +91,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x30000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F4_DSI,
@@ -83,7 +104,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x40000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F4_HD,
@@ -93,7 +117,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x40000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F4_LP,
@@ -103,7 +130,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x10000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F411RE,
@@ -113,7 +143,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x20000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F4_DE,
@@ -123,7 +156,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x18000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F1_HIGH,
@@ -133,7 +169,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0x10000,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // This ignores the EEPROM! (and uses the page erase size,
@@ -145,7 +184,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x100,
             .sram_size = 0x4000,
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_L1_CAT2,
@@ -155,7 +197,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x100,
             .sram_size = 0x8000,
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_L1_MEDIUM_PLUS,
@@ -165,7 +210,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x100,
             .sram_size = 0x8000,/*Not completely clear if there are some with 48K*/
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_L1_HIGH,
@@ -175,7 +223,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x100,
             .sram_size = 0xC000, /*Not completely clear if there are some with 32K*/
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_L152_RE,
@@ -185,7 +236,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x100,
             .sram_size = 0x14000, /*Not completely clear if there are some with 32K*/
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F1_CONN,
@@ -195,7 +249,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0x10000,
             .bootrom_base = 0x1fffb000,
-            .bootrom_size = 0x4800
+            .bootrom_size = 0x4800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {//Low and Medium density VL have same chipid. RM0041 25.6.1
             .chip_id = STLINK_CHIPID_STM32_F1_VL_MEDIUM_LOW,
@@ -205,7 +262,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,
             .sram_size = 0x2000,//0x1000 for low density devices
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32F446x family. Support based on DM00135183.pdf (RM0390) document.
@@ -216,7 +276,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x20000,
             .sram_size = 0x20000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32F410 MCUs. Support based on DM00180366.pdf (RM0401) document.
@@ -227,7 +290,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,
             .sram_size = 0x8000,
             .bootrom_base = 0x1fff0000,
-            .bootrom_size = 0x7800
+            .bootrom_size = 0x7800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // This is STK32F303VCT6 device from STM32 F3 Discovery board.
@@ -239,7 +305,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0xa000,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // This is STK32F373VCT6 device from STM32 F373 eval board
@@ -251,7 +320,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0xa000,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F1_VL_HIGH,
@@ -261,7 +333,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0x8000,
             .bootrom_base = 0x1ffff000,
-            .bootrom_size = 0x800
+            .bootrom_size = 0x800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F1_XL,
@@ -271,7 +346,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0x18000,
             .bootrom_base = 0x1fffe000,
-            .bootrom_size = 0x1800
+            .bootrom_size = 0x1800,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //Use this as an example for mapping future chips:
@@ -283,7 +361,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,           // Page sizes listed in Table 4
             .sram_size = 0x4000,               // "SRAM" byte size in hex from Table 2
             .bootrom_base = 0x1fffC800,                // "System memory" starting address from Table 2
-            .bootrom_size = 0x3000             // "System memory" byte size in hex from Table 2
+            .bootrom_size = 0x3000,            // "System memory" byte size in hex from Table 2
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //Use this as an example for mapping future chips:
@@ -295,7 +376,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,		// Page sizes listed in Table 4
             .sram_size = 0x2000,		// "SRAM" byte size in hex from Table 2
             .bootrom_base = 0x1fffec00,		// "System memory" starting address from Table 2
-            .bootrom_size = 0xC00 		// "System memory" byte size in hex from Table 2
+            .bootrom_size = 0xC00, 		// "System memory" byte size in hex from Table 2
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // RM0402 document was used to find these parameters
@@ -307,7 +391,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,        // Table 5. Flash module organization ?
             .sram_size = 0x40000,        // "SRAM" byte size in hex from Table 4
             .bootrom_base = 0x1FFF0000,     // "System memory" starting address from Table 4
-            .bootrom_size = 0x7800       // "System memory" byte size in hex from Table 4
+            .bootrom_size = 0x7800,       // "System memory" byte size in hex from Table 4
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // RM0430 DocID029473 Rev 2 document was used to find these parameters
@@ -319,7 +406,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x4000,        // Table 5. Flash module organization (variable sector sizes, but 0x4000 is smallest)
             .sram_size = 0x50000,        // "SRAM" byte size in hex from Figure 2 (Table 4 only says 0x40000)
             .bootrom_base = 0x1FFF0000,     // "System memory" starting address from Table 4
-            .bootrom_size = 0x7800       // "System memory" byte size in hex from Table 4
+            .bootrom_size = 0x7800,       // "System memory" byte size in hex from Table 4
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             .chip_id = STLINK_CHIPID_STM32_F09X,
@@ -329,7 +419,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,		// Page sizes listed in Table 4 (pg 56)
             .sram_size = 0x8000,		// "SRAM" byte size in hex from Table 2 (pg 50)
             .bootrom_base = 0x1fffd800,		// "System memory" starting address from Table 2
-            .bootrom_size = 0x2000 		// "System memory" byte size in hex from Table 2
+            .bootrom_size = 0x2000, 		// "System memory" byte size in hex from Table 2
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //Use this as an example for mapping future chips:
@@ -341,7 +434,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,		// Page sizes listed in Table 4
             .sram_size = 0x1800,		// "SRAM" byte size in hex from Table 2
             .bootrom_base = 0x1fffec00,		// "System memory" starting address from Table 2
-            .bootrom_size = 0xC00 		// "System memory" byte size in hex from Table 2
+            .bootrom_size = 0xC00, 		// "System memory" byte size in hex from Table 2
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             //Use this as an example for mapping future chips:
@@ -353,7 +449,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x400,		// Page sizes listed in Table 4
             .sram_size = 0x1000,		// "SRAM" byte size in hex from Table 2
             .bootrom_base = 0x1fffec00,		// "System memory" starting address from Table 2
-            .bootrom_size = 0xC00 		// "System memory" byte size in hex from Table 2
+            .bootrom_size = 0xC00, 		// "System memory" byte size in hex from Table 2
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32F30x
@@ -364,7 +463,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0xa000,
             .bootrom_base = 0x1fffd800,
-            .bootrom_size = 0x2000
+            .bootrom_size = 0x2000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32L0x
@@ -376,7 +478,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x80,
             .sram_size = 0x2000,
             .bootrom_base = 0x1ff0000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0x08080000,
+            .eeprom_size = 0x800,
+            .eeprom_pagesize = 0x4
         },
         {
             // STM32L0x Category 5
@@ -388,7 +493,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x80,
             .sram_size = 0x5000,
             .bootrom_base = 0x1ff0000,
-            .bootrom_size = 0x2000
+            .bootrom_size = 0x2000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32L0x Category 2
@@ -400,7 +508,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x80,
             .sram_size = 0x2000,
             .bootrom_base = 0x1ff0000,
-            .bootrom_size = 0x1000
+            .bootrom_size = 0x1000,
+            .eeprom_base = 0x08080000,
+            .eeprom_size = 0x400,
+            .eeprom_pagesize = 0x4
         },
         {
             // STM32F334
@@ -412,7 +523,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,
             .sram_size = 0x3000,
             .bootrom_base = 0x1fffd800,
-            .bootrom_size = 0x2000
+            .bootrom_size = 0x2000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // This is STK32F303RET6 device from STM32 F3 Nucelo board.
@@ -424,7 +538,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x800,         // 4.2.1 Flash memory organization
             .sram_size = 0x10000,            // 3.3 Embedded SRAM
             .bootrom_base = 0x1fffd800,      // 3.3.2 / Table 4 System Memory
-            .bootrom_size = 0x2000
+            .bootrom_size = 0x2000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32L4x6
@@ -439,7 +556,10 @@ static const struct stlink_chipid_params devices[] = {
             // sizes; table 2, page 74 for SRAM2 location)
             .sram_size = 0x18000,
             .bootrom_base = 0x1fff0000,      // Tables 4-6, pages 80-81 (Bank 1 system memory)
-            .bootrom_size = 0x7000           // 28k (per bank), same source as base
+            .bootrom_size = 0x7000,          // 28k (per bank), same source as base
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STLINK_CHIPID_STM32_L43X
@@ -454,7 +574,10 @@ static const struct stlink_chipid_params devices[] = {
             // sizes; table 2, page 74 for SRAM2 location)
             .sram_size = 0xc000,
             .bootrom_base = 0x1fff0000,      // Tables 4-6, pages 80-81 (Bank 1 system memory)
-            .bootrom_size = 0x7000           // 28k (per bank), same source as base
+            .bootrom_size = 0x7000,          // 28k (per bank), same source as base
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STLINK_CHIPID_STM32_L496X
@@ -468,7 +591,10 @@ static const struct stlink_chipid_params devices[] = {
             // SRAM2 is 64k at 0x20040000 (sec 2.2.1, fig 2, page 74)
             .sram_size = 0x40000,            // Embedded SRAM (sec 2.4, page 84)
             .bootrom_base = 0x1fff0000,      // System Memory (Bank 1) (sec 3.3.1)
-            .bootrom_size = 0x7000           // 28k (per bank), same source as base
+            .bootrom_size = 0x7000,          // 28k (per bank), same source as base
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STLINK_CHIPID_STM32_L46X
@@ -482,7 +608,10 @@ static const struct stlink_chipid_params devices[] = {
             // SRAM2 is 32k mapped at 0x10000000 (sec 2.4.2, table 3-4, page 68, also fig 2 on page 63)
             .sram_size = 0x20000,
             .bootrom_base = 0x1fff0000,      // Tables 6, pages 71-72 (Bank 1 system memory, also fig 2 on page 63)
-            .bootrom_size = 0x7000           // 28k (per bank), same source as base
+            .bootrom_size = 0x7000,          // 28k (per bank), same source as base
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // STM32L011
@@ -493,7 +622,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x80,
             .sram_size = 0x2000,
             .bootrom_base = 0x1ff00000,
-            .bootrom_size = 0x2000
+            .bootrom_size = 0x2000,
+            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
+            .eeprom_size = 0,                  //! @todo
+            .eeprom_pagesize = 4               //! @todo
         },
         {
             // unknown
@@ -504,7 +636,10 @@ static const struct stlink_chipid_params devices[] = {
             .flash_pagesize = 0x0,
             .sram_size = 0x0,
             .bootrom_base = 0x0,
-            .bootrom_size = 0x0
+            .bootrom_size = 0x0,
+            .eeprom_base = 0x0,
+            .eeprom_size = 0x0,
+            .eeprom_pagesize = 0x0
         },
 
 
