@@ -162,6 +162,24 @@ int main(int ac, char** av)
                 goto on_error;
             }
         }
+        else if ((o.addr >= sl->eeprom_base) &&
+                (o.addr < sl->eeprom_base + sl->eeprom_size)) {
+
+            /* Hack to use existing flash write functions for writing to eeprom */
+            sl->flash_base = sl->eeprom_base;
+            sl->flash_size = sl->eeprom_size;
+            sl->flash_pgsz = sl->eeprom_pgsz;
+
+            if(o.format == FLASH_FORMAT_IHEX)
+                err = stlink_mwrite_flash(sl, mem, (uint32_t)size, o.addr);
+            else
+                err = stlink_fwrite_flash(sl, o.filename, o.addr);
+            if (err == -1)
+            {
+                printf("eeprom : stlink_fwrite_flash() == -1\n");
+                goto on_error;
+            }
+        }
         else {
             err = -1;
             printf("Unknown memory region\n");
