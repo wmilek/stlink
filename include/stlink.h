@@ -167,6 +167,11 @@ typedef struct flash_loader {
         stm32_addr_t sys_base;
         size_t sys_size;
 
+        /* eeprom details */
+        stm32_addr_t eeprom_base;
+        size_t eeprom_size;
+        size_t eeprom_pgsz;
+
         struct stlink_version_ version;
     };
 
