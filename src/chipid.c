@@ -494,8 +494,8 @@ static const struct stlink_chipid_params devices[] = {
             .sram_size = 0x5000,
             .bootrom_base = 0x1ff0000,
             .bootrom_size = 0x2000,
-            .eeprom_base = 0xFFFFFFFF,         //! @todo Update with correct values
-            .eeprom_size = 0,                  //! @todo
+            .eeprom_base = 0x08080000,
+            .eeprom_size = 0x1800,
             .eeprom_pagesize = 4               //! @todo
         },
         {
