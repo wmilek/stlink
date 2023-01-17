@@ -100,6 +100,7 @@ endif()
 set_target_properties(${STLINK_LIB_SHARED}
 	PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR}
 	VERSION ${STLINK_SHARED_VERSION}
+	OUTPUT_NAME ${PROJECT_NAME}
 )
 
 # Link shared library with apple OS libraries
