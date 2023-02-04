@@ -22,6 +22,9 @@
 
 enum SCSI_Generic_Direction {SG_DXFER_TO_DEV = 0, SG_DXFER_FROM_DEV = 0x80};
 
+
+int _stlink_usb_reset_2(struct stlink_libusb* handle);
+
 static inline uint32_t le_to_h_u32(const uint8_t* buf) {
     return((uint32_t)((uint32_t)buf[0] | (uint32_t)buf[1] << 8 | (uint32_t)buf[2] << 16 | (uint32_t)buf[3] << 24));
 }
@@ -81,6 +84,18 @@ void _stlink_usb_close(stlink_t* sl) {
         libusb_exit(handle->libusb_ctx);
         free(handle);
     }
+}
+
+int _stlink_usb_reset_2(struct stlink_libusb* handle) {
+    int t;
+
+    t = libusb_reset_device(handle->usb_handle);
+    if (t) {
+        printf("[!] reset_device failed: %s\n", libusb_error_name(t));
+        return(-1);
+    }
+
+    return 0;
 }
 
 ssize_t send_recv(struct stlink_libusb* handle, int terminate,
@@ -167,6 +182,9 @@ int _stlink_usb_version(stlink_t *sl) {
 
     if (size == -1) {
         printf("[!] send_recv STLINK_GET_VERSION\n");
+
+	_stlink_usb_reset_2(slu);
+
         return((int)size);
     }
 
